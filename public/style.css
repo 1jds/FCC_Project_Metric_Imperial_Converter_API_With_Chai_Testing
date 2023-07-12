@@ -1,7 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Roboto:wght@300;400&display=swap');
+
+html { 
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  background: #F9F9F9;
+  max-width: 800px;
+}
+
+h1 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+h1::before{
+  content: "";
+  position: absolute;
+  top: 2.25rem;
+  left: -1.75rem;
+  width: 75%;
+  height: 50%;
+  background-color: yellow;
+  opacity: 0.75;
+  z-index: -1;
+  transform: skew(-20deg)
+}
+
+h3 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+}
+
+h3::before{
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  width: 8px;
+  height: 120%;
+  background-color: yellow;
+  opacity: 0.85;
+}
+
 code {
-    background-color: whitesmoke;
+  color: whitesmoke;
+  font-size: 1rem;
+}
+
+div:has(> code) {
+ border-radius: 10px;
+ padding: 1rem;
+ background: #1d1e22; 
+ min-height: 1.75rem;
+} 
+
+#jsonResult {
+  overflow-wrap: break-word;
 }
 
 section, header {
     margin: 50px;
+}
+
+input {
+  margin-right: 10px;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+}
+
+#convertField {
+  box-shadow: 0 0 0 2px rgba(0,0,0,.75), 0 3px 8px 0 rgba(0,0,0,.15);
+  box-sizing: border-box;
+  border: 0;
+}
+
+/* BUTTON STYLE MODIFIED FROM: https://getcssscan.com/css-buttons-examples */
+#convert {
+  background-color: #fff000;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  box-sizing: border-box;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#convert:not(:disabled):hover,
+#convert:not(:disabled):focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.75), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+#convert:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
 }
